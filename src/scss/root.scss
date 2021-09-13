@@ -1,0 +1,50 @@
+:root {
+  //--clr-elements: var(--clr-white);
+  //--clr-background: var(--clr-secondary-600);
+  --clr-text: var(--clr-dark-grey);
+  //--clr-input: var(--clr-secondary-300);
+  --clr-border: var(--clr-grey-600);
+  --clr-bg: var(--clr-grey-300);
+  --clr-component-bg: var(--clr-grey-600);
+  --clr-component-disabled-bg: var(--clr-grey-900);
+
+  --clr-primary-300: #3CB4AC;
+  --clr-primary-600: #147B74;
+
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-black: #000;
+  --clr-dark-grey: #7A7A7A;
+  --clr-grey-300: #f6f6f6;
+  --clr-grey-600: #eee;
+  --clr-grey-900: #CBCACA;
+
+  --ff-primary: 'Commissioner', sans-serif;
+  //--fs-300: 14px;
+  --fs-600: 16px;
+  --fs-700: 24px;
+  --fw-300: 400;
+  --fw-600: 500;
+  --fw-800: 700;
+}
+
+:root[theme='dark'] {
+  --clr-elements: var(--clr-primary-300);
+  --clr-background: var(--clr-primary-600);
+  --clr-text: var(--clr-white);
+  --clr-input: var(--clr-white);
+
+  --clr-primary-300: hsl(209, 23%, 22%);
+  --clr-primary-600: hsl(207, 26%, 17%);
+  --clr-primary-900: hsl(200, 15%, 8%);
+  --clr-secondary-300: hsl(0, 0%, 52%);
+  --clr-secondary-600: hsl(0, 0%, 98%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --ff-primary: 'Nunito Sans', sans-serif;
+
+  --fs-300: 14px;
+  --fs-600: 16px;
+  --fw-300: 300;
+  --fw-600: 600;
+  --fw-800: 800;
+}

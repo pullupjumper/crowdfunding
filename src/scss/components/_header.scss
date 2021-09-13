@@ -1,0 +1,36 @@
+
+.header {
+  background: url(".././images/image-hero-mobile.jpg") no-repeat center center/ 100%;
+  height: 300px;
+
+  &__brand {
+    text-decoration: none;
+    color: var(--clr-white);
+    font-size: var(--fs-700);
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-800);
+  }
+
+  &__hamburger {
+    display: inline-block;
+    width: 15px;
+    height: 16px;
+    //font-size: var(--fs-300);
+    color: var(--clr-white);
+    background: url(".././images/icon-hamburger.svg") no-repeat center/100%;
+  }
+}
+
+@media (min-width: 375px) {
+  header {
+    //background: url(".././images/image-hero-mobile.jpg") no-repeat center 100%;
+
+  }
+}
+
+@media (min-width: 1440px) {
+  header {
+    background: url(".././images/image-hero-desktop.jpg") no-repeat center center/ 100%;
+    height: 400px;
+  }
+}
