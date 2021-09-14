@@ -1,0 +1,45 @@
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  border-radius: 100vh;
+  text-decoration: none;
+
+  &.btn__primary {
+    color: var(--clr-white);
+    background: var(--clr-primary-300);
+
+    &:hover {
+      background: var(--clr-primary-600);
+    }
+  }
+}
+
+.bookmark {
+  display: inline-flex;
+  padding-right: 16px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 100vh;
+  text-decoration: none;
+  background: var(--clr-component-bg);
+
+  &.bookmark--clicked {
+    padding-right: 0;
+
+    .bookmark__text {
+      display: none;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 56px;
+    height: 56px;
+    background: url(".././images/icon-bookmark.svg");
+  }
+
+  &__text {
+    margin-left: 8px;
+    color: var(--clr-dark-grey);
+  }
+}

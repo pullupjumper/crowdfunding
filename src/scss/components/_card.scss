@@ -1,7 +1,13 @@
 .card {
 
-  padding: 40px;
+  padding: 32px;
   border-radius: 10px;
   border: 1px solid var(--clr-border);
   background: var(--clr-white);
+
+  &__footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
