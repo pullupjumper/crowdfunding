@@ -4,7 +4,7 @@
   border-radius: 100vh;
   text-decoration: none;
 
-  &.btn__primary {
+  &.btn--primary {
     color: var(--clr-white);
     background: var(--clr-primary-300);
 
@@ -23,7 +23,7 @@
   text-decoration: none;
   background: var(--clr-component-bg);
 
-  &.bookmark--clicked {
+  &.bookmark-clicked {
     padding-right: 0;
 
     .bookmark__text {

@@ -1,0 +1,11 @@
+.progressbar {
+  border-radius: 100vh;
+  background: var(--clr-component-bg);
+
+  &__inner {
+    width: 75%;
+    height: 16px;
+    border-radius: 100vh;
+    background: var(--clr-primary-300);
+  }
+}
