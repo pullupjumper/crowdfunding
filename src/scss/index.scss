@@ -5,6 +5,8 @@
 @import "./components/card";
 @import "./components/btn";
 @import "./components/progressbar";
+@import "./components/dropdown";
+@import "./components/modal";
 
 .content {
   position: absolute;
@@ -102,6 +104,30 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+}
+
+.dropdown__menu {
+  //position: absolute;
+  //right: 0;
+  //top: 24px;
+  //width: 300px;
+  background: var(--clr-white);
+  border-radius: 10px;
+  border: 1px solid var(--clr-border);
+
+  .dropdown__item {
+    display: block;
+    padding: 16px;
+    border-bottom: 1px solid var(--clr-border);
+    text-decoration: none;
+    font-size: var(--fs-600);
+    font-weight: var(--fw-800);
+    color: var(--clr-black);
+
+    &:last-child {
+      border-bottom: none;
     }
   }
 }

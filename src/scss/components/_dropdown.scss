@@ -1,0 +1,46 @@
+.dropdown {
+  position: relative;
+
+  &__toggle {
+    display: inline-block;
+    width: 15px;
+    height: 16px;
+    //font-size: var(--fs-300);
+    color: var(--clr-white);
+    background: url(".././images/icon-hamburger.svg") no-repeat center/100%;
+  }
+
+  //&__menu {
+  //  position: absolute;
+  //  right: 0;
+  //  top: 24px;
+  //  width: 300px;
+  //  background: var(--clr-white);
+  //  border-radius: 10px;
+  //  border: 1px solid var(--clr-border);
+  //
+  //  //&:after {
+  //  //  display: block;
+  //  //  content: '';
+  //  //  margin: 100%;
+  //  //  //width: 100%;
+  //  //  //height: 100%;
+  //  //  background: rgba(0, 0, 0, 50%);
+  //  //}
+  //
+  //  .dropdown__item {
+  //    display: block;
+  //    padding: 16px;
+  //    border-bottom: 1px solid var(--clr-border);
+  //    text-decoration: none;
+  //    font-size: var(--fs-600);
+  //    font-weight: var(--fw-800);
+  //    color: var(--clr-black);
+  //
+  //    &:last-child {
+  //      border-bottom: none;
+  //    }
+  //  }
+  //}
+}
+
