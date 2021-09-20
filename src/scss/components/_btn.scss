@@ -12,6 +12,14 @@
       background: var(--clr-primary-600);
     }
   }
+
+  &.btn--primary.btn--primary-disabled {
+    background: var(--clr-component-disabled-bg);
+
+    &:hover {
+      background: var(--clr-component-disabled-bg);
+    }
+  }
 }
 
 .bookmark {

@@ -35,6 +35,23 @@
     }
   }
 
+  &.card--product.card--product-disabled {
+    .card__title {
+
+      h3 {
+        color: var(--clr-dark-grey);
+      }
+
+      h4 {
+        color: var(--clr-primary-100);
+      }
+    }
+
+    .card__text {
+      color: var(--clr-component-disabled-bg);
+    }
+  }
+
   &__footer {
     display: flex;
     justify-content: space-between;
