@@ -1,10 +1,10 @@
-.btn {
+.c-btn {
   display: inline-block;
   padding: 16px 40px;
   border-radius: 100vh;
   text-decoration: none;
 
-  &.btn--primary {
+  &.c-btn--primary {
     color: var(--clr-white);
     background: var(--clr-primary-300);
 
@@ -13,7 +13,7 @@
     }
   }
 
-  &.btn--primary.btn--primary-disabled {
+  &.c-btn--primary.c-btn--primary-disabled {
     background: var(--clr-component-disabled-bg);
 
     &:hover {
@@ -22,7 +22,7 @@
   }
 }
 
-.bookmark {
+.c-bookmark {
   display: inline-flex;
   padding-right: 16px;
   align-items: center;
@@ -31,10 +31,10 @@
   text-decoration: none;
   background: var(--clr-component-bg);
 
-  &.bookmark-clicked {
+  &.c-bookmark-clicked {
     padding-right: 0;
 
-    .bookmark__text {
+    .c-bookmark__text {
       display: none;
     }
   }

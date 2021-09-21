@@ -1,4 +1,4 @@
-.modal__overlay {
+.c-modal__overlay {
 
   display: none;
   justify-content: center;
@@ -13,7 +13,7 @@
   transition: opacity .2s ease;
   z-index: 200;
 
-  .modal__container {
+  .c-modal__container {
     position: absolute;
     left: 50%;
     top: 30%;
@@ -23,7 +23,7 @@
     z-index: 300;
   }
 
-  &.modal__overlay--active {
+  &.c-modal__overlay-active {
     display: flex;
   }
 }

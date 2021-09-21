@@ -1,5 +1,5 @@
 
-.container {
+.l-container {
   width: 90%;
   margin: 0 auto;
 }
@@ -16,3 +16,19 @@
   align-items: center;
 }
 
+.l-list {
+
+  &.l-list--counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  & > * {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
