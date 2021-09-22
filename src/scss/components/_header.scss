@@ -18,6 +18,20 @@
     font-family: var(--ff-primary);
     font-weight: var(--fw-800);
   }
+
+  &__hamburger {
+    display: inline-block;
+    width: 15px;
+    height: 16px;
+    //font-size: var(--fs-300);
+    color: var(--clr-white);
+    background: url(".././images/icon-hamburger.svg") no-repeat center/100%;
+
+    &.js-header__hamburger-closed {
+      background: url(".././images/icon-close-menu.svg") no-repeat center/100%;
+
+    }
+  }
 }
 
 @media (min-width: 375px) {

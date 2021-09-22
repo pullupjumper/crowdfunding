@@ -24,6 +24,15 @@
     align-items: center;
   }
 
+  &.l-list--pledge {
+    padding: 16px;
+    margin-bottom: 32px;
+    background: var(--clr-white);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+  }
+
   & > * {
     margin-bottom: 16px;
 
