@@ -1,22 +1,27 @@
 .c-btn {
   display: inline-block;
   padding: 16px 40px;
+  border: 1px solid var(--clr-border);
   border-radius: 100vh;
   text-decoration: none;
 
   &.c-btn--primary {
+    border: 1px solid var(--clr-primary-300);
     color: var(--clr-white);
     background: var(--clr-primary-300);
 
     &:hover {
+      border: 1px solid var(--clr-primary-600);
       background: var(--clr-primary-600);
     }
   }
 
   &.c-btn--primary.c-btn--primary-disabled {
+    border: 1px solid var(--clr-component-disabled-bg);
     background: var(--clr-component-disabled-bg);
 
     &:hover {
+      border: 1px solid var(--clr-component-disabled-bg);
       background: var(--clr-component-disabled-bg);
     }
   }
