@@ -20,6 +20,8 @@
     </div>
   </div>
 </header>
+
+<!-- c-modal__overlay -->
 <div class="c-modal__overlay">
   <div class="c-modal__container">
     <div class="c-dropdown__menu">
@@ -29,7 +31,10 @@
     </div>
   </div>
 </div>
-<div class="c-modal__overlay c-modal__overlay--selection js-modal__overlay-active">
+<!-- c-modal__overlay end-->
+
+<!-- c-modal__overlay--selection -->
+<div class="c-modal__overlay c-modal__overlay--selection ">
   <div class="c-modal__container">
     <div class="c-modal__header">
       <h3 class="c-modal__title">Back this project</h3>
@@ -73,7 +78,7 @@
           </div>
         </li>
         <li class="l-list__item">
-          <div class="c-card">
+          <div class="c-card c-card--pledge c-card--pledge-active">
             <div class="c-card__body">
               <div class="c-pledge">
                 <label class="c-checkbox">
@@ -94,10 +99,20 @@
                 </div>
               </div>
             </div>
+            <div class="c-card__footer">
+              <h4>Enter your pledge</h4>
+              <div class="l-formContainer">
+                <div class="c-number">
+                  <span class="c-number__hint">$</span>
+                  <input class="c-number__input" type="number">
+                </div>
+                <a href="#" class="c-btn c-btn--primary">Continue</a>
+              </div>
+            </div>
           </div>
         </li>
         <li class="l-list__item">
-          <div class="c-card">
+          <div class="c-card c-card--pledge c-card--pledge-active">
             <div class="c-card__body">
               <div class="c-pledge">
                 <label class="c-checkbox">
@@ -118,10 +133,20 @@
                 </div>
               </div>
             </div>
+            <div class="c-card__footer">
+              <h4>Enter your pledge</h4>
+              <div class="l-formContainer">
+                <div class="c-number">
+                  <span class="c-number__hint">$</span>
+                  <input class="c-number__input" type="number">
+                </div>
+                <a href="#" class="c-btn c-btn--primary">Continue</a>
+              </div>
+            </div>
           </div>
         </li>
         <li class="l-list__item">
-          <div class="c-card">
+          <div class="c-card c-card--pledge c-card--pledge-active">
             <div class="c-card__body">
               <div class="c-pledge">
                 <label class="c-checkbox">
@@ -140,6 +165,16 @@
                   <span>101</span>
                   <span>Left</span>
                 </div>
+              </div>
+            </div>
+            <div class="c-card__footer">
+              <h4>Enter your pledge</h4>
+              <div class="l-formContainer">
+                <div class="c-number">
+                  <span class="c-number__hint">$</span>
+                  <input class="c-number__input" type="number">
+                </div>
+                <a href="#" class="c-btn c-btn--primary">Continue</a>
               </div>
             </div>
           </div>
@@ -148,6 +183,25 @@
     </div>
   </div>
 </div>
+<!-- c-modal__overlay--selection end-->
+
+<!-- c-modal__overlay--complete -->
+<div class="c-modal__overlay c-modal__overlay--complete js-modal__overlay-active">
+  <div class="c-modal__container">
+    <div class="c-modal__header">
+      <span></span>
+      <h4 class="c-modal__title">Thanks for your support!</h4>
+    </div>
+    <div class="c-modal__body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicingio quis, reiciendis saepe sint voluptate voluptatem voluptatibus?</p>
+    </div>
+    <div class="c-modal__footer">
+      <a href="#" class="c-btn c-btn--primary">Got it!</a>
+    </div>
+  </div>
+</div>
+<!-- c-modal__overlay--complete end-->
+
 <section class="l-container" style="position: relative">
   <div class="l-content">
     <div class="c-card">
@@ -163,6 +217,7 @@
         </a>
       </div>
     </div>
+    <!-- counter -->
     <div class="c-card">
       <div class="c-card__body">
         <ul class="l-list l-list--counter">
@@ -192,6 +247,8 @@
         </div>
       </div>
     </div>
+    <!-- counter end -->
+    <!-- c-card--sub -->
     <div class="c-card c-card--sub">
       <div class="c-card__body">
         <h2 class="c-card__title">About this project</h2>
@@ -262,6 +319,7 @@
         </ul>
       </div>
     </div>
+    <!-- c-card--sub end-->
   </div>
 </section>
 
