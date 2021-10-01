@@ -19,7 +19,7 @@
     top: 20%;
     transform: translateX(-50%);
     width: 90%;
-    max-width: 500px;
+    max-width: 600px;
     z-index: 300;
     background: var(--clr-white);
     border-radius: 10px;
@@ -31,12 +31,13 @@
         font-size: var(--fs-500);
         color: var(--clr-dark-grey);
         background: var(--clr-white);
+        margin-bottom: 16px;
       }
     }
 
     .c-modal__header {
       display: flex;
-      padding: 32px 16px 16px 16px;
+      padding: 32px var(--padding-300) var(--padding-300) var(--padding-300);
       justify-content: space-between;
       align-items: center;
       border-top-left-radius: 10px;

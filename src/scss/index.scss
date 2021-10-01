@@ -11,8 +11,12 @@
 @import "./components/number";
 
 .l-content {
+  max-width: 600px;
+  width: 100%;
   position: absolute;
+  left: 50%;
   top: -40px;
+  transform: translateX(-50%);
 
   &:after {
     position: absolute;
@@ -31,12 +35,6 @@
     margin-bottom: 16px;
   }
 }
-
-//.counterList {
-//  display: flex;
-//  flex-direction: column;
-//  align-items: center;
-//}
 
 .c-counter {
   position: relative;
@@ -97,13 +95,28 @@
     font-weight: var(--fw-600);
     color: var(--clr-dark-grey);
   }
+
+  @media (min-width: 576px) {
+
+    &:after {
+      top: 0;
+      left: 100%;
+      width: 0;
+      height: 70%;
+    }
+
+    &__number {
+      text-align: start;
+
+    }
+
+    &__text {
+      text-align: start;
+    }
+  }
 }
 
 .c-dropdown__menu {
-  //position: absolute;
-  //right: 0;
-  //top: 24px;
-  //width: 300px;
   display: none;
   background: var(--clr-white);
   border-radius: 10px;
@@ -129,6 +142,7 @@
 }
 
 .c-pledge {
+  position: relative;
   //padding: var(--padding-300);
 
   & > * {
@@ -159,6 +173,19 @@
       margin-left: 8px;
       font-size: var(--fs-500);
       color: var(--clr-dark-grey);
+    }
+  }
+
+  @media (min-width: 576px) {
+
+    &__text {
+      padding: 0 0 0 46px;
+    }
+
+    &__remain {
+      position: absolute;
+      top: 0;
+      right: 0;
     }
   }
 }
