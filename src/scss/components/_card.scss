@@ -92,8 +92,26 @@
       }
     }
 
+    .c-counter__number {
+      color: var(--clr-dark-grey);
+    }
+
+    .c-counter__text {
+      color: var(--clr-component-disabled-bg);
+    }
+
     .c-card__text {
       color: var(--clr-component-disabled-bg);
+    }
+
+    .c-btn {
+      border: 1px solid var(--clr-component-disabled-bg);
+      background: var(--clr-component-disabled-bg);
+
+      &:hover {
+        border: 1px solid var(--clr-component-disabled-bg);
+        background: var(--clr-component-disabled-bg);
+      }
     }
   }
 }
@@ -105,6 +123,33 @@
 
     .c-card__footer {
       display: flex;
+    }
+  }
+
+  &.c-card--pledge-disabled {
+    .c-checkbox__content {
+
+      span:first-child {
+        color: var(--clr-dark-grey);
+      }
+
+      span:last-child {
+        color: var(--clr-primary-100);
+      }
+    }
+
+    .c-pledge__remain {
+      span:first-child {
+        color: var(--clr-dark-grey);
+      }
+
+      span:last-child {
+        color: var(--clr-component-disabled-bg);
+      }
+    }
+
+    .c-pledge__text {
+      color: var(--clr-component-disabled-bg);
     }
   }
 

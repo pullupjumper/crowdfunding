@@ -14,6 +14,11 @@
   <div class="c-header__sub">
     <div class="l-container d-flex justify-content-between align-items-center">
       <a href="#" class="c-header__brand">crowdfund</a>
+      <ul class="c-menu">
+        <li class="c-menu__item"><a class="c-link" href="#">About</a></li>
+        <li class="c-menu__item"><a class="c-link" href="#">Discover</a></li>
+        <li class="c-menu__item"><a class="c-link" href="#">Get Started</a></li>
+      </ul>
       <div class="c-dropdown">
         <a href="#" class="c-header__hamburger"></a>
       </div>
@@ -34,7 +39,7 @@
 <!-- c-modal__overlay end-->
 
 <!-- c-modal__overlay--selection -->
-<div class="c-modal__overlay c-modal__overlay--selection ">
+<div class="c-modal__overlay c-modal__overlay--selection js-modal__overlay-active">
   <div class="c-modal__container">
     <div class="c-modal__header">
       <h3 class="c-modal__title">Back this project</h3>
@@ -44,7 +49,7 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid</p>
       <ul class="l-list l-list--pledge">
         <li class="l-list__item">
-          <div class="c-card c-card--pledge c-card--pledge-active">
+          <div class="c-card c-card--pledge c-card--pledge-disabled">
             <div class="c-card__body">
               <div class="c-pledge">
                 <label class="c-checkbox">
@@ -315,11 +320,11 @@
                   promotional campaign, and you’ll be added to a special Backer member list.</p>
               </div>
               <div class="c-card__footer">
-                <div class="c-counter c-counter--product c-counter--product-disabled">
+                <div class="c-counter c-counter--product ">
                   <h1 class="c-counter__number">101</h1>
                   <p class="c-counter__text">left</p>
                 </div>
-                <a href="#" class="c-btn c-btn--primary c-btn--primary-disabled">Select Reward</a>
+                <a href="#" class="c-btn c-btn--primary ">Select Reward</a>
               </div>
             </div>
           </li>
