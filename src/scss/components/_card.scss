@@ -81,6 +81,7 @@
   }
 
   &.c-card--product-disabled {
+
     .c-card__header {
 
       h3 {
@@ -127,6 +128,7 @@
   }
 
   &.c-card--pledge-disabled {
+
     .c-checkbox__content {
 
       span:first-child {
@@ -139,6 +141,7 @@
     }
 
     .c-pledge__remain {
+
       span:first-child {
         color: var(--clr-dark-grey);
       }
