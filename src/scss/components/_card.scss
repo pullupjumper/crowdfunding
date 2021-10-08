@@ -80,7 +80,7 @@
     }
   }
 
-  &.c-card--product-disabled {
+  &.is-disabled {
 
     .c-card__header {
 
@@ -119,7 +119,7 @@
 
 .c-card.c-card--pledge {
 
-  &.c-card--pledge-active {
+  &.is-active {
     border: 1px solid var(--clr-primary-600);
 
     .c-card__footer {
@@ -127,7 +127,7 @@
     }
   }
 
-  &.c-card--pledge-disabled {
+  &.is-disabled {
 
     .c-checkbox__content {
 

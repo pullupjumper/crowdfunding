@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <header class="c-header">
   <div class="c-header__sub">
     <div class="l-container d-flex justify-content-between align-items-center">
@@ -26,8 +27,8 @@
   </div>
 </header>
 
-<!-- c-modal__overlay -->
-<div class="c-modal__overlay">
+<!-- c-modal -->
+<div class="c-modal">
   <div class="c-modal__container">
     <div class="c-dropdown__menu">
       <a href="#" class="c-dropdown__item">About</a>
@@ -36,20 +37,20 @@
     </div>
   </div>
 </div>
-<!-- c-modal__overlay end-->
+<!-- c-modal end-->
 
-<!-- c-modal__overlay--selection -->
-<div class="c-modal__overlay c-modal__overlay--selection ">
+<!-- c-modal--selection -->
+<div class="c-modal c-modal--selection js-modal--selection">
   <div class="c-modal__container">
     <div class="c-modal__header">
       <h3 class="c-modal__title">Back this project</h3>
-      <a href="#" class="c-modal__close"></a>
+      <a href="#" class="c-modal__close js-modal__close"></a>
     </div>
     <div class="c-modal__body">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid</p>
-      <ul class="l-list l-list--pledge">
+      <ul class="l-list l-list--pledge js-list--pledge">
         <li class="l-list__item">
-          <div class="c-card c-card--pledge c-card--pledge-disabled">
+          <div class="c-card c-card--pledge is-disabled">
             <div class="c-card__body">
               <div class="c-pledge">
                 <label class="c-checkbox">
@@ -83,7 +84,7 @@
           </div>
         </li>
         <li class="l-list__item">
-          <div class="c-card c-card--pledge c-card--pledge-active">
+          <div class="c-card c-card--pledge is-active">
             <div class="c-card__body">
               <div class="c-pledge">
                 <label class="c-checkbox">
@@ -117,7 +118,7 @@
           </div>
         </li>
         <li class="l-list__item">
-          <div class="c-card c-card--pledge c-card--pledge-active">
+          <div class="c-card c-card--pledge is-active">
             <div class="c-card__body">
               <div class="c-pledge">
                 <label class="c-checkbox">
@@ -151,7 +152,7 @@
           </div>
         </li>
         <li class="l-list__item">
-          <div class="c-card c-card--pledge c-card--pledge-active">
+          <div class="c-card c-card--pledge is-active">
             <div class="c-card__body">
               <div class="c-pledge">
                 <label class="c-checkbox">
@@ -188,10 +189,10 @@
     </div>
   </div>
 </div>
-<!-- c-modal__overlay--selection end-->
+<!-- c-modal--selection end-->
 
-<!-- c-modal__overlay--complete -->
-<div class="c-modal__overlay c-modal__overlay--complete ">
+<!-- c-modal--complete -->
+<div class="c-modal c-modal--complete js-modal--complete">
   <div class="c-modal__container">
     <div class="c-modal__header">
       <span></span>
@@ -205,7 +206,7 @@
     </div>
   </div>
 </div>
-<!-- c-modal__overlay--complete end-->
+<!-- c-modal--complete end-->
 
 <section class="l-container" style="position: relative">
   <div class="l-content">
@@ -214,11 +215,10 @@
         <h2>Mastercraft Bamboo Monitor Riser</h2>
       </div>
       <div class="c-card__body">
-        <!--<h2 class="c-card__title"></h2>-->
         <p class="c-card__text">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
       </div>
       <div class="c-card__footer">
-        <a href="#" class="c-btn c-btn--primary">Back this project</a>
+        <a href="#" class="c-btn c-btn--primary js-btn--back">Back this project</a>
         <a href="#" class="c-bookmark c-bookmark-clicked">
           <span class="c-bookmark__icon"></span>
           <span class="c-bookmark__text">Bookmark</span>
@@ -228,7 +228,7 @@
     <!-- counter -->
     <div class="c-card">
       <div class="c-card__body">
-        <ul class="l-list l-list--counter">
+        <ul class="l-list l-list--counter js-list--counter">
           <li class="l-list__item">
             <div class="c-counter">
               <h1 class="c-counter__number">$89,914</h1>
@@ -309,7 +309,7 @@
             </div>
           </li>
           <li class="l-list__item">
-            <div class="c-card c-card--product c-card--product-disabled">
+            <div class="c-card c-card--product is-disabled">
               <div class="c-card__header">
                 <h3>Bamboo Stand</h3>
                 <h4>Pledge $25 or more</h4>

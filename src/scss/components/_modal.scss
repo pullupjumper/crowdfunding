@@ -1,4 +1,4 @@
-.c-modal__overlay {
+.c-modal {
   display: none;
   justify-content: center;
   align-items: center;
@@ -64,17 +64,17 @@
     }
   }
 
-  &.js-modal__overlay-active {
+  &.is-active {
     display: flex;
     opacity: 1;
   }
 }
 
-.c-modal__overlay.c-modal__overlay--selection {
+.c-modal.c-modal--selection {
 
 }
 
-.c-modal__overlay.c-modal__overlay--complete {
+.c-modal.c-modal--complete {
 
   .c-modal__header {
     flex-direction: column;
