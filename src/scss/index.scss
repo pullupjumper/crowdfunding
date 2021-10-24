@@ -116,14 +116,14 @@
 }
 
 .c-dropdown__menu {
-  display: none;
+  display: block;
   background: var(--clr-white);
   border-radius: 10px;
   border: 1px solid var(--clr-border);
 
-  &.js-dropdown__menu-active {
-    display: block;
-  }
+  //&.is-active {
+  //  display: block;
+  //}
 
   .c-dropdown__item {
     display: block;

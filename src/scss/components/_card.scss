@@ -158,8 +158,12 @@
 
   .c-card__footer {
     display: none;
+    //display: flex;
     border-top: 1px solid var(--clr-border);
     flex-direction: column;
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
 
     h4 {
       padding-bottom: 16px;

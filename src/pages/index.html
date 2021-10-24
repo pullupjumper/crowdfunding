@@ -12,7 +12,7 @@
 <body>
 
 <header class="c-header">
-  <div class="c-header__sub">
+  <div class="c-header__sub js-subHeader">
     <div class="l-container d-flex justify-content-between align-items-center">
       <a href="#" class="c-header__brand">crowdfund</a>
       <ul class="c-menu">
@@ -21,14 +21,14 @@
         <li class="c-menu__item"><a class="c-link" href="#">Get Started</a></li>
       </ul>
       <div class="c-dropdown">
-        <a href="#" class="c-header__hamburger"></a>
+        <a href="#" class="c-header__hamburger js-hamburger"></a>
       </div>
     </div>
   </div>
 </header>
 
 <!-- c-modal -->
-<div class="c-modal">
+<div class="c-modal js-menuModal">
   <div class="c-modal__container">
     <div class="c-dropdown__menu">
       <a href="#" class="c-dropdown__item">About</a>
@@ -40,15 +40,15 @@
 <!-- c-modal end-->
 
 <!-- c-modal--selection -->
-<div class="c-modal c-modal--selection js-modal--selection">
-  <div class="c-modal__container">
+<div class="c-modal c-modal--selection js-selectionModal">
+  <div class="c-modal__container js-selectionModalContainer">
     <div class="c-modal__header">
       <h3 class="c-modal__title">Back this project</h3>
-      <a href="#" class="c-modal__close js-modal__close"></a>
+      <a href="#" class="c-modal__close js-selectionModalCloseBtn"></a>
     </div>
     <div class="c-modal__body">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid</p>
-      <ul class="l-list l-list--pledge js-list--pledge">
+      <ul class="l-list l-list--pledge js-pledgeList">
         <li class="l-list__item">
           <div class="c-card c-card--pledge is-disabled">
             <div class="c-card__body">
@@ -192,7 +192,7 @@
 <!-- c-modal--selection end-->
 
 <!-- c-modal--complete -->
-<div class="c-modal c-modal--complete js-modal--complete">
+<div class="c-modal c-modal--complete js-completeModal">
   <div class="c-modal__container">
     <div class="c-modal__header">
       <span></span>
@@ -202,7 +202,7 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicingio quis, reiciendis saepe sint voluptate voluptatem voluptatibus?</p>
     </div>
     <div class="c-modal__footer">
-      <a href="#" class="c-btn c-btn--primary">Got it!</a>
+      <a href="#" class="c-btn c-btn--primary js-completeModalCloseBtn">Got it!</a>
     </div>
   </div>
 </div>
@@ -218,7 +218,7 @@
         <p class="c-card__text">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
       </div>
       <div class="c-card__footer">
-        <a href="#" class="c-btn c-btn--primary js-btn--back">Back this project</a>
+        <a href="#" class="c-btn c-btn--primary js-backProjectBtn">Back this project</a>
         <a href="#" class="c-bookmark c-bookmark-clicked">
           <span class="c-bookmark__icon"></span>
           <span class="c-bookmark__text">Bookmark</span>
@@ -228,7 +228,7 @@
     <!-- counter -->
     <div class="c-card">
       <div class="c-card__body">
-        <ul class="l-list l-list--counter js-list--counter">
+        <ul class="l-list l-list--counter js-counterList">
           <li class="l-list__item">
             <div class="c-counter">
               <h1 class="c-counter__number">$89,914</h1>
@@ -267,7 +267,7 @@
           posture and make you more comfortable while at work, helping you stay focused on the task at hand.</p>
         <p class="c-card__text">Featuring artisan craftsmanship, the simplicity of design creates extra desk space below
           your computer to allow notepads, pens, and USB sticks to be stored under the stand.</p>
-        <ul class="l-list js-list--product">
+        <ul class="l-list js-productList">
           <li class="l-list__item">
             <div class="c-card c-card--product">
               <div class="c-card__header">

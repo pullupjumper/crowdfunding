@@ -1,15 +1,20 @@
 import "../scss/index.scss";
 
-const hamburger = document.querySelector('.c-header__hamburger');
-const menu = document.querySelector('.c-dropdown__menu');
-const modalOverlay = document.querySelector('.c-modal');
+const hamburger = document.querySelector('.js-hamburger');
+const menuModal = document.querySelector('.js-menuModal');
 
-const counterContainer = document.querySelector('.js-list--counter');
-const productListContainer = document.querySelector('.js-list--product');
-const selectionModal = document.querySelector('.js-modal--selection');
-const selectionModalClose = document.querySelector('.js-modal__close');
-const backBtn = document.querySelector('.js-btn--back');
-const pledgeListContainer = document.querySelector('.js-list--pledge');
+const counterContainer = document.querySelector('.js-counterList');
+const productListContainer = document.querySelector('.js-productList');
+const selectionModal = document.querySelector('.js-selectionModal');
+const selectionModalCloseBtn = document.querySelector('.js-selectionModalCloseBtn');
+const completeModal = document.querySelector('.js-completeModal');
+const completeModalCloseBtn = completeModal.querySelector('.js-completeModalCloseBtn');
+const backProjectBtn = document.querySelector('.js-backProjectBtn');
+const pledgeListContainer = document.querySelector('.js-pledgeList');
+const subHeader = document.querySelector('.js-subHeader');
+
+const body = document.querySelector('body');
+
 
 const pledgeStatus = {
   STANDARD: 0,
@@ -23,7 +28,7 @@ const counter = {
   day: 56
 };
 
-const pledgeList = [{
+let pledgeList = [{
   status: 0,
   id: '001',
   name: "Bamboo Stand",
@@ -46,11 +51,6 @@ const pledgeList = [{
   describe: "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list."
 }];
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('js-header__hamburger-closed');
-  menu.classList.toggle('js-dropdown__menu-active');
-  modalOverlay.classList.toggle('is-active');
-});
 
 updateCounter();
 initProduct();
@@ -58,23 +58,52 @@ initModal();
 
 
 function initModal() {
-  updateModal();
-  pledgeListContainer.addEventListener('click', onSelected);
-  selectionModalClose.addEventListener('click', onClose);
-  backBtn.addEventListener('click', onOpen);
+  initSelectionModal();
+  hamburger.addEventListener('click', onHamburgerClick);
+  pledgeListContainer.addEventListener('click', onSelectionModalSelect);
+  selectionModalCloseBtn.addEventListener('click', onSelectionModalClose);
+  backProjectBtn.addEventListener('click', onSelectionModalOpen);
+  completeModalCloseBtn.addEventListener('click', onCompleteModalClose);
+  window.addEventListener('scroll', debounce(onScroll));
+  selectionModal.addEventListener('scroll', debounce(onScroll));
   console.log('initModal');
 }
 
-function updateModal() {
+
+function onScroll() {
+  const bodyPosition = (body.offsetTop) + (body.clientHeight / 2);
+
+  if (window.scrollY > bodyPosition || selectionModal.scrollTop > 50) {
+    // console.log(window.scrollY);
+    // console.log(body.clientHeight);
+    subHeader.classList.add('is-visible');
+  } else {
+    subHeader.classList.remove('is-visible');
+  }
+}
+
+
+function onHamburgerClick(e) {
+  hamburger.classList.toggle('is-active');
+  menuModal.classList.toggle('is-active');
+}
+
+function initSelectionModal() {
   let html = ``;
 
   pledgeList.forEach((pledge, index, array) => {
     let className = '';
     let isChecked = '';
+    let maxHeight = 0;
 
     if (pledgeStatus.CHECKED === pledge.status) {
       className = 'is-active';
       isChecked = 'checked';
+      let footer = document.querySelector('.c-card--pledge .c-card__footer');
+
+      if (footer) {
+        maxHeight = footer.scrollHeight + 'px';
+      }
     }
 
     if (pledge.stock === 0) {
@@ -101,7 +130,8 @@ function updateModal() {
                 </div>
               </div>
             </div>
-            <div class="c-card__footer">
+            <div class="c-card__footer" style="max-height: ${maxHeight}">
+            
               <h4>Enter your pledge</h4>
               <div class="l-formContainer">
                 <div class="c-number">
@@ -110,6 +140,7 @@ function updateModal() {
                 </div>
                 <a href="#" class="c-btn c-btn--primary js-continueBtn">Continue</a>
               </div>
+             
             </div>
           </div>
         </li>`;
@@ -119,13 +150,15 @@ function updateModal() {
 }
 
 function setStatus(id, status) {
-  pledgeList.forEach(pledge => {
+  pledgeList = pledgeList.map(pledge => {
+
     if (pledge.stock === 0) {
       pledge.status = pledgeStatus.DISABLED;
       return pledge;
     }
 
     if (pledge.id === id) {
+
       pledge.status = status;
       return pledge;
     }
@@ -135,27 +168,126 @@ function setStatus(id, status) {
   });
 }
 
-function onSelected(e) {
+function updateSelectionModal() {
+  pledgeList.forEach((pledge, index, array) => {
+    let listItem = document.querySelector(`li[data-id="${pledge.id}"]`);
+    let card = listItem.querySelector('.c-card');
+    let footer = card.querySelector('.c-card__footer');
+    footer.style.maxHeight = 0;
+    card.classList.remove('is-active');
+    card.classList.remove('is-disabled');
+
+    if (pledgeStatus.CHECKED === pledge.status) {
+      card.classList.add('is-active');
+
+      if (footer) {
+        // console.log(footer)
+        // console.log(footer.scrollHeight)
+        footer.style.maxHeight = footer.scrollHeight + 'px';
+      }
+    }
+
+    if (pledge.stock === 0) {
+      card.classList.add('is-disabled');
+      array[index].status = 2;
+    }
+  });
+}
+
+function onSelectionModalSelect(e) {
   if (isParentElementExisted(e.target, 'c-checkbox')) {
     let id = getParentElementData(e.target, 'l-list__item', 'id');
     setStatus(id, pledgeStatus.CHECKED);
-    updateModal();
-    console.log(pledgeList);
+    updateSelectionModal();
   }
 
   if (e.target.classList.contains('js-continueBtn')) {
-    console.log(e.target.parentElement.querySelector('.js-number__input').value);
+    let id = getParentElementData(e.target, 'l-list__item', 'id');
+    let pledge = getPledgeById(id);
+    const minPledge = pledge.pledge;
+    let inputValue = e.target.parentElement.querySelector('.js-number__input').value;
+
+    if (inputValue == null || inputValue === '' || inputValue === undefined) {
+      inputValue = minPledge;
+    }
+
+    addMoney(inputValue);
+    addBacker();
+    updateCounter();
+    closeSelectionModal();
+    showCompleteModal();
+    // console.log(e.target.parentElement.querySelector('.js-number__input').value);
   }
 }
 
-function onClose(e) {
+function closeSelectionModal() {
+  selectionModal.classList.toggle('is-active');
+}
+
+function showCompleteModal() {
+  completeModal.classList.toggle('is-active');
+}
+
+function addMoney(money) {
+  counter.money += parseInt(money, 10);
+}
+
+function addBacker() {
+  counter.backer++;
+}
+
+function setPledgeById(id, pledge) {
+  pledgeList = pledgeList.map(item => {
+    if (item.id = id) {
+      return pledge;
+    }
+
+    return item;
+  });
+}
+
+function getPledgeById(id) {
+  let result = null;
+
+  pledgeList.forEach(pledge => {
+    if (pledge.id === id) {
+      result = pledge;
+    }
+  });
+
+  return result;
+}
+
+function onCompleteModalOpen(e) {
+  completeModal.classList.toggle('is-active');
+}
+
+function onCompleteModalClose(e) {
+  completeModal.classList.toggle('is-active');
+}
+
+function onSelectionModalClose(e) {
   selectionModal.classList.toggle('is-active');
   console.log('close');
 }
 
-function onOpen(e) {
+function onSelectionModalOpen(e) {
   selectionModal.classList.toggle('is-active');
   console.log('open');
+}
+
+function debounce(func, delay = 250) {
+  let timer = null;
+
+  return () => {
+    let context = this;
+    let args = arguments;
+
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(context, args);
+    }, delay)
+  }
 }
 
 function isParentElementExisted(el, className) {
