@@ -196,9 +196,17 @@ function updateSelectionModal() {
 
 function onSelectionModalSelect(e) {
   if (isParentElementExisted(e.target, 'c-checkbox')) {
-    let id = getParentElementData(e.target, 'l-list__item', 'id');
-    setStatus(id, pledgeStatus.CHECKED);
-    updateSelectionModal();
+    const id = getParentElementData(e.target, 'l-list__item', 'id');
+    const card = document.querySelector(`li[data-id="${id}"] .c-card`);
+    const input = card.querySelector('.c-checkbox__input');
+
+    if (!card.classList.contains('is-disabled')) {
+      input.removeAttribute('disabled');
+      setStatus(id, pledgeStatus.CHECKED);
+      updateSelectionModal();
+    } else {
+      input.setAttribute('disabled', 'true');
+    }
   }
 
   if (e.target.classList.contains('js-continueBtn')) {
